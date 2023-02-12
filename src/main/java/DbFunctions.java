@@ -145,4 +145,20 @@ public class DbFunctions {
             System.out.println(e);
         }
     }
+
+        //  delete row by name
+
+    public void deleteRowByName(Connection conn,String tableName,String name){
+        Statement statement;
+        try{
+            String query="delete from "+tableName+" where name = "+"'"+name+"'";
+            statement=conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Data Deleted");
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+
+    }
 }

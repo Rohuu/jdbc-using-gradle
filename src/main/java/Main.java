@@ -8,10 +8,11 @@ public class Main {
 //    db.createTable(conn,"employee");
 //    db.insertRow(conn,"employee","Rohit","Bengaluru");
 //    db.updateName(conn,"employee","Deepak","Dolly");
-//        db.updateAddress(conn,"employee","Bengaluru","RTO");
-//        db.searchByName(conn,"employee","Rohit");
-        db.searchById(conn,"employee",4);
-//    db.readData(conn,"employee");
+//    db.updateAddress(conn,"employee","Bengaluru","RTO");
+//    db.searchByName(conn,"employee","Rohit");
+//    db.searchById(conn,"employee",4);
+      db.deleteRowByName(conn,"employee","Rohit");
+      db.readData(conn,"employee");
 
     }
 }
