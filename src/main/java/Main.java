@@ -12,8 +12,9 @@ public class Main {
 //    db.searchByName(conn,"employee","Rohit");
 //    db.searchById(conn,"employee",4);
 //      db.deleteRowByName(conn,"employee","Rohit");
-        db.deleteRowById(conn,"employee",1);
-      db.readData(conn,"employee");
-
+//        db.deleteRowById(conn,"employee",1);
+//      db.readData(conn,"employee");
+        db.deleteTable(conn,"employee");
+         // no table now as it is dropped... you can add again...
     }
 }

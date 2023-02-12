@@ -177,4 +177,19 @@ public class DbFunctions {
         }
 
     }
+
+    // delete table
+
+    public void deleteTable(Connection conn,String tableName){
+        Statement statement;
+        try{
+            String query="drop table "+tableName;
+            statement=conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Table Deleted");
+        }
+        catch (Exception e){
+            System.out.println(e);
+        }
+    }
 }
