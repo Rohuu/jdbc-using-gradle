@@ -161,4 +161,20 @@ public class DbFunctions {
         }
 
     }
+
+    //  delete row by id
+
+    public void deleteRowById(Connection conn,String tableName,int id){
+        Statement statement;
+        try{
+            String query="delete from "+tableName+" where empId = "+id;
+            statement=conn.createStatement();
+            statement.executeUpdate(query);
+            System.out.println("Data Deleted");
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+
+    }
 }

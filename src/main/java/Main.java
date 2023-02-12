@@ -11,7 +11,8 @@ public class Main {
 //    db.updateAddress(conn,"employee","Bengaluru","RTO");
 //    db.searchByName(conn,"employee","Rohit");
 //    db.searchById(conn,"employee",4);
-      db.deleteRowByName(conn,"employee","Rohit");
+//      db.deleteRowByName(conn,"employee","Rohit");
+        db.deleteRowById(conn,"employee",1);
       db.readData(conn,"employee");
 
     }
