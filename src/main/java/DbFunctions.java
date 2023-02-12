@@ -36,7 +36,7 @@ public class DbFunctions {
             System.out.println("Table Created");
         }
         catch(Exception e){
-
+            System.out.println(e);
         }
     }
 
@@ -60,7 +60,7 @@ public class DbFunctions {
 
     public void readData(Connection conn,String tableName){
         Statement statement;
-        ResultSet resultSet=null;
+        ResultSet resultSet;
         try{
             String query=String.format("select * from "+tableName);
             statement=conn.createStatement();
@@ -100,6 +100,26 @@ public class DbFunctions {
             statement=conn.createStatement();
             statement.executeUpdate(query);
             System.out.println("Address Updated");
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
+
+    //  search by name
+
+    public void searchByName(Connection conn,String tableName,String name){
+        Statement statement;
+        ResultSet resultSet;
+        try{
+            String query="select * from "+tableName+" where name = '"+name+"'";
+            statement=conn.createStatement();
+            resultSet=statement.executeQuery(query);
+            while(resultSet.next()){
+                System.out.print(resultSet.getString("empId")+" ");
+                System.out.print(resultSet.getString("name")+" ");
+                System.out.println(resultSet.getString("address"));
+            }
         }
         catch(Exception e){
             System.out.println(e);
