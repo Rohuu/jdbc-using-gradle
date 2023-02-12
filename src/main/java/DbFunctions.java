@@ -125,4 +125,24 @@ public class DbFunctions {
             System.out.println(e);
         }
     }
+
+    //  search by id
+
+    public void searchById(Connection conn,String tableName,int id){
+        Statement statement;
+        ResultSet resultSet;
+        try{
+            String query="select * from "+tableName+" where empId = "+id;
+            statement=conn.createStatement();
+            resultSet=statement.executeQuery(query);
+            while(resultSet.next()){
+                System.out.print(resultSet.getString("empId")+" ");
+                System.out.print(resultSet.getString("name")+" ");
+                System.out.println(resultSet.getString("address"));
+            }
+        }
+        catch(Exception e){
+            System.out.println(e);
+        }
+    }
 }
